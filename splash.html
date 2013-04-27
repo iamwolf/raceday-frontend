@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RaceDayInfo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Loading Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">-->
+  </head>
+
+  <body>
+
+  <div style="max-width:1366px;height:912px;background:url('/images/background_splash.png') no-repeat top;margin:88px auto;">
+    <img src="/images/logo.png" style="position:relative;top:-59px;left:200px;z-index:2;">
+
+    <div style="width:400px;position: relative;top: 222px;left: 200px;">
+        <div class="login-form">
+        <form id="signup">
+          <div class="control-group">
+            <input type="email" name="email" class="login-field" value="" placeholder="sporty@runner.com" id="login-name" />
+            <label class="login-field-icon fui-man-16" for="login-name"></label>
+          </div>
+
+          <div class="control-group">
+            <input type="password" name="password" class="login-field" value="" placeholder="Password" id="login-pass" />
+            <label class="login-field-icon fui-lock-16" for="login-pass"></label>
+          </div>
+
+          <button class="btn btn-primary btn-large btn-block btn-info" type="submit">Sign Up</button>
+        </form>
+        </div>
+    </div>
+
+  <!-- FOOTER -->
+  <!--<footer>
+    <p>&copy; 2013 RaceDay.</p>
+  </footer>-->
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+    <!--[if lt IE 8]>
+      <script src="js/icon-font-ie7.js"></script>
+      <script src="js/icon-font-ie7-24.js"></script>
+    <![endif]-->
+
+
+
+  <script>
+  $("#signup").submit(function(event){
+    event.preventDefault();
+    $('button[type="submit"]').attr('disabled','disabled');
+    $.post("/signup", $("#signup").serialize(), function(ret) { 
+      if (ret == "OK") {
+        alert("Thank you very much for signing up!");
+        $('input[type="email"]').val("");
+        $('input[type="password"]').val("");
+        $('button[type="submit"]').removeAttr('disabled');
+      }
+      else alert("An unknown error occurred, sorry, we messed up.");
+    });    
+  });
+  </script>
+
+  </body>
+</html>
