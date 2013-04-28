@@ -17,19 +17,29 @@
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
     <![endif]-->
-
-
-    <!-- Fav and touch icons -->
-    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="assets/ico/favicon.png">-->
   </head>
 
   <body>
+    <div class="navbar container" style="height:78px;">
+    <div class="nav-collapse collapse" id="topLogin">
+      <ul class="nav pull-right" style="margin-top:40px;">
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+          <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+            <form id="login">
+              <input id="loginEmail" style="margin-bottom: 15px;" type="email" name="user[email]" size="30" placeholder="sporty@runner.com" />
+              <input id="loginPassword" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" placeholder="Password" />
+              <input id="loginRememberMe" style="float: left; margin-right: 10px;" type="checkbox" name="user[remember_me]" value="1" />
+              <label class="string optional" for="user_remember_me"> Remember me</label>
+              <input class="btn btn-primary btn-info" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+    </div>
 
-  <div style="max-width:1366px;height:912px;background:url('/images/background_splash.png') no-repeat top;margin:88px auto;">
+    <div style="max-width:1366px;height:912px;background:url('/images/background_splash.png') no-repeat top;margin:0px auto;">
     <img src="/images/logo.png" style="position:relative;top:-59px;left:200px;z-index:2;">
 
     <div style="width:400px;position: relative;top: 222px;left: 200px;">
@@ -47,6 +57,10 @@
 
           <button class="btn btn-primary btn-large btn-block btn-info" type="submit">Sign Up</button>
         </form>
+        <div id="loggedin">
+          <h1>Hey, USERNAME</h1><p>Why are you not going backstage with us?</p>
+          <a href="javascript:authClient.logout();" class="btn btn-primary btn-large">Log Out</a>
+        </div>
         </div>
     </div>
 
@@ -62,7 +76,13 @@
   <![endif]-->
   <script src="https://cdn.firebase.com/v0/firebase.js"></script>
   <script src="https://cdn.firebase.com/v0/firebase-auth-client.js"></script>
+  <!-- Load JS here for greater good =============================-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+  <script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-dropdown.js"></script>
   <script>
+  $("#loggedin").hide();
+
   var dataRef = new Firebase("https://raceday.firebaseio.com");
 
   /* Authenticating */
@@ -73,21 +93,32 @@
     } else if (user) {
       console.log(user);
       // user authenticated with Firebase
-      alert("logged in");
+      $("#signup").hide();
+      $("#topLogin").hide();
+      $("#loggedin").show();
       //window.location.replace("/user");
       console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
 
     } else {
+      $("#loggedin").hide();
+      $("#signup").show();
+      $("#topLogin").show();
       // user is logged out
     }
   });
   </script>
 
-    <!-- Load JS here for greater good =============================-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
-
     <script>
+    $(function() {
+      // Setup drop down menu
+      $('.dropdown-toggle').dropdown();
+     
+      // Fix input element click problem
+      $('.dropdown input, .dropdown label').click(function(e) {
+        e.stopPropagation();
+      });
+    });
+
     $("#signup").submit(function(event){
       event.preventDefault();
       $('button[type="submit"]').attr('disabled','disabled');
@@ -111,6 +142,16 @@
         } else {
           console.log(error);
         }
+      });
+    });
+
+    $("#login").submit(function(event){
+      event.preventDefault();
+      $('input[type="submit"]').attr('disabled','disabled');
+      authClient.login('password', {
+        email: $("#loginEmail").val(),
+        password: $("#loginPassword").val(),
+        rememberMe: ($("#loginRememberMe").val()==1)?true:false
       });
     });
     </script>
