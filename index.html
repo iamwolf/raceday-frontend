@@ -58,8 +58,8 @@
           <button class="btn btn-primary btn-large btn-block btn-info" type="submit">Sign Up</button>
         </form>
         <div id="loggedin">
-          <h1>Hey, USERNAME</h1><p>Why are you not going backstage with us?</p>
-          <a href="javascript:authClient.logout();" class="btn btn-primary btn-large">Log Out</a>
+          <h1>Hey, </h1><h5>Wanna go <a href="/dashboard.html">backstage</a> with us?</h5>
+          <a href="javascript:authClient.logout();" class="btn btn-primary btn-large pull-right">Log Out</a>
         </div>
         </div>
     </div>
@@ -76,13 +76,10 @@
   <![endif]-->
   <script src="https://cdn.firebase.com/v0/firebase.js"></script>
   <script src="https://cdn.firebase.com/v0/firebase-auth-client.js"></script>
-  <!-- Load JS here for greater good =============================-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
   <script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-dropdown.js"></script>
   <script>
-  $("#loggedin").hide();
-
   var dataRef = new Firebase("https://raceday.firebaseio.com");
 
   /* Authenticating */
@@ -98,7 +95,6 @@
       $("#loggedin").show();
       //window.location.replace("/user");
       console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
-
     } else {
       $("#loggedin").hide();
       $("#signup").show();
@@ -153,6 +149,9 @@
         password: $("#loginPassword").val(),
         rememberMe: ($("#loginRememberMe").val()==1)?true:false
       });
+      $('input[type="submit"]').removeAttr('disabled');
+      $('#loginEmail').val("");
+      $("#loginPassword").val("");
     });
     </script>
   </body>
