@@ -128,7 +128,7 @@
         else alert("An unknown error occurred, sorry, we messed up.");
       });    */
 
-      authClient.createUser($('input[type="email"]').val(), $('input[type="password"]').val(), function(error, user) {
+      authClient.createUser($('input[name="email"]').val(), $('input[name="password"]').val(), function(error, user) {
         if (!error) {
           alert("Thank you very much for signing up!");
           $('input[type="email"]').val("");
