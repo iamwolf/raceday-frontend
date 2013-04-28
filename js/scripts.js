@@ -1,3 +1,11 @@
-  $('.timeline-tiem .read-more').click(function() {
-     $('.timeline-tiem .more-info').slideDown();
-  });
+$(document).ready(function(){
+
+
+	$(".timeline-item .learn-more").click(function(){
+	
+	  $(this).next("article").slideToggle("slow");
+	  $(this).toggleClass("active");
+	
+	});
+
+});

@@ -37,6 +37,23 @@
             mapOptions);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+            
+    </script>
+    
+    <script type="text/javascript">
+    	       function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(30.268174, -97.755601),
+          zoom: 15,
+          mapTypeControl: false,
+          streetViewControl: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map1 = new google.maps.Map(document.getElementById("mini-map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      
     </script>
 
     <!-- Fav and touch icons -->
@@ -82,24 +99,103 @@
   			</ul>
   			
   			<div class="main-content">
-  				<article class="timeline-item map-location has-accordion">
-  					<h1>Start Times</h1>
-  					<p>3K start time will be 9:15am and 10K start time will be at 11:15am sharp. We are expecting...</p>
-  					<h3 class="learn-more"><a href="#">Read More <i class="icon-double-angle-down"></i></a></h3>
-  				</article>
-  				<article class="timeline-item map-location has-accordion">
-  					<h1>Start Times</h1>
-  					<p>3K start time will be 9:15am and 10K start time will be at 11:15am sharp. We are expecting...</p>
-  					<h3 class="learn-more"><a href="#">Read More <i class="icon-double-angle-down"></i></a></h3>
+	  				
+  				  <article class="timeline-item map-location has-accordion">
+  					<h1>Start times</h1>
   					<article class="more-info">
-  						<p>The is more information about the item selected. We could place a map or image inside of this container if it needed one.</p>
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>10K start is at 6:30 a.m. 5K start is at 7:00 a.m.</p>
   					</article>
   				</article>
-  				<article class="timeline-item secondary-item has-accordion">
-  					<h1>Start Times</h1>
-  					<p>3K start time will be 9:15am and 10K start time will be at 11:15am sharp. We are expecting...</p>
-  					<h3 class="learn-more"><a href="#">Read More <i class="icon-double-angle-down"></i></a></h3>
+  			
+  				<article class="timeline-item map-location has-accordion">
+  					<h1>Parking</h1>
+  					<article class="more-info">
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>305 S Congress Ave., Austin American Statesman on Congress and East Riverside.</p>
+  					</article>
   				</article>
+  				
+  				<article class="timeline-item map-location has-accordion">
+  					<h1>Race Day Map</h1>
+  					<article class="more-info">
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>35 water stops and 4 bathroom areas are provided along the course</p>
+  					</article>
+  				</article>
+   				
+   				<article class="timeline-item map-location has-accordion">
+  					<h1>Packet Pickup</h1>
+  					<article class="more-info">
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>Palmer Events Center on 900 Barton Springs Rd, Austin, TX on Saturday 9:00 – 5:00.</p>
+  					</article>
+  				</article>	
+  				
+  				<article class="timeline-item map-location has-accordion">
+  					<h1>Race Info</h1>
+  					<article class="more-info">
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>The course is a loop heading north with a total elevation of 234 feet.</p>
+  					</article>
+  				</article>							  				
+
+  				<article class="timeline-item map-location has-accordion">
+  					<h1>Pacers</h1>
+  					<article class="more-info">
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>Pacers will be holding a sign in 30 second increments starting at 7:00 min/mile pace.</p>
+  					</article>
+  				</article>		
+  				
+  				 <article class="timeline-item map-location has-accordion">
+  					<h1>Sponsors</h1>
+  					<article class="more-info">
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>Thank you to Nike for being our Platinum Sponsor this year.</p>
+  					</article>
+  				</article>	
+  				
+  				 <article class="timeline-item map-location has-accordion">
+  					<h1>Tracking</h1>
+  					<article class="more-info">
+<!--
+  						<div class="mini-map">
+  							<div id="mini-map-canvas"></div>
+  						</div>
+-->
+  						<p>Find your race pace, ranks, and results here.</p>
+  					</article>
+  				</article>	
+  				
   			</div>
   			
   		</div>
