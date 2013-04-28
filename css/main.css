@@ -1,8 +1,23 @@
+/* ------------------------
+  colors + typography
+  ------------------------ */
 
+html {
+/* 	background: #f4f5f7; */
+	color: #b2b3b3;
+}
+a, a:visited {
+	color: #b2b3b3;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #939393;
+}
+  
+  
 /* ------------------------
   header
   ------------------------ */
-
 
 
 #login-wrapper {
@@ -12,12 +27,18 @@
 	left: 200px;
 }
 
+
 /* ------------------------
-  globals
+  global structure
   ------------------------ */
+ 
+ 
   
-#lower-content {
+#lower-container {
 	width: 1084px; 
+	margin: 0 auto;
+	margin-top: 80px;
+	clear: both;
 }
 .wrapper {
 	width: 1084px;
@@ -27,7 +48,7 @@
 #header-bar {
 	height: 98px;
 	position: relative;
-	box-shadow:1px 0px 2px black;
+	box-shadow: 1px 0px 2px black;
 	z-index: 1000;
 }
 #header-bar .wrapper {
@@ -44,7 +65,7 @@
 #account-actions {
 	float: right;
 	list-style: none;
-	margin: 26px 100px 0 0;
+	margin: 26px 0 0 0;
 	margin-left: 200px;
 	width: 400px;
 	height: 60px;
@@ -53,6 +74,10 @@
 #account-actions li {
 	float: right;
 	margin-right: 40px;
+	padding-top: 12px;
+}
+#avatar {
+	margin-top: -10px;
 }
 
 /* ------------------------
@@ -60,17 +85,71 @@
   ------------------------ */
   
 #map-hero-header {
-	height: 190px;
+	height: 120px;
 	width: 1084px; 
 	margin:-200px auto 0 auto;
 	position: relative;
 }
 #map-canvas {
 	height: 400px;
+	margin-bottom: 80px;
 }
 #billboard-info {
 	
 }
+#sidemenu {
+	float: left;
+	width: 232px;
+	margin: 0;
+	padding: 12px 0 0 0;
+	background: #fff;
+	border-radius: 4px;
+	background: #f4f5f7;
+}
+#sidemenu li {
+	list-style: none;
+	height: 32px;
+	margin-bottom: 10px;
+	padding: 12px;
+	border-bottom: 1px solid #eaedf1;
+}
+#sidemenu li:last-child {
+	margin-bottom: 0px;
+	padding-bottom: 12px;
+	border-bottom: none;
+}
+
+.main-content {
+	float: left;
+	width: 772px;
+	margin-left: 80px;
+}
+.timeline-item {
+	background: #FFF;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background: #f4f5f7;
+}
+.timeline-item h1 {
+	font-size: 20px;
+}
+.more-info {
+	display: none;
+}
+.has-accordion {
+	padding-bottom: 12px;
+}
+.learn-more {
+	font-size: 16px;
+}
+.map-location {
+	border-left: 6px solid #f37777;
+}
+.secondary-item {
+	border-left: 6px solid #97e7c8;
+}
+
 
 /* ------------------------
   user dashboard

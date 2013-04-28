@@ -11,8 +11,8 @@
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
     
-    <link href="css/main.css" rel="stylesheet">
-
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/fonts.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -20,6 +20,8 @@
     <![endif]-->
     
      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd6CjOtcdy_r3ISX1E3pZwUGAqYD6akzo&sensor=true">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+     
     </script>
 
       <script type="text/javascript">
@@ -52,7 +54,7 @@
 	    <img id="logo" src="/images/logo.png" alt="RaceDay">
 
 	      <ul id="account-actions">
-	      	<li class="alpha"><a href="#"><img src="/images/avatar.png" alt="my profile" height="46" width="46" /></a></li>
+	      	<li class="alpha"><a href="#"><img src="/images/avatar.png" alt="my profile" height="46" width="46" id="avatar" /></a></li>
 	        <li><a href="#">My Account</a></li>
 	      	<li><a href="#">Logout</a></li>
 	      </ul>
@@ -78,6 +80,28 @@
   				<li><a href="#">Marathon Info</a></li>
   				<li><a href="#">Results</a></li>
   			</ul>
+  			
+  			<div class="main-content">
+  				<article class="timeline-item map-location has-accordion">
+  					<h1>Start Times</h1>
+  					<p>3K start time will be 9:15am and 10K start time will be at 11:15am sharp. We are expecting...</p>
+  					<h3 class="learn-more"><a href="#">Read More <i class="icon-double-angle-down"></i></a></h3>
+  				</article>
+  				<article class="timeline-item map-location has-accordion">
+  					<h1>Start Times</h1>
+  					<p>3K start time will be 9:15am and 10K start time will be at 11:15am sharp. We are expecting...</p>
+  					<h3 class="learn-more"><a href="#">Read More <i class="icon-double-angle-down"></i></a></h3>
+  					<article class="more-info">
+  						<p>The is more information about the item selected. We could place a map or image inside of this container if it needed one.</p>
+  					</article>
+  				</article>
+  				<article class="timeline-item secondary-item has-accordion">
+  					<h1>Start Times</h1>
+  					<p>3K start time will be 9:15am and 10K start time will be at 11:15am sharp. We are expecting...</p>
+  					<h3 class="learn-more"><a href="#">Read More <i class="icon-double-angle-down"></i></a></h3>
+  				</article>
+  			</div>
+  			
   		</div>
   	</div>
   </div>
